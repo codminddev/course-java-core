@@ -1,4 +1,4 @@
-package warehouse.unidad5.abstracta;
+package warehouse.unidad5.polimorfismo;
 
 public class BankCard extends BaseCard{
 	
@@ -20,8 +20,14 @@ public class BankCard extends BaseCard{
 	}
 	
 	@Override
-	public void block() {
-		this.block = true;
+	public void pay(double amount) {
+		System.out.println("BankCard.pay");
+		this.balance -= amount;
 	}
 	
+	@Override
+	public void buy(double amount) {
+		System.out.println("BankCard.buy");
+		this.balance += amount;
+	}
 }

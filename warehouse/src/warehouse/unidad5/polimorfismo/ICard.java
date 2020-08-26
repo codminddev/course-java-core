@@ -1,4 +1,4 @@
-package warehouse.unidad5.interfeces;
+package warehouse.unidad5.polimorfismo;
 
 public interface ICard {
 	public void setNumber(String String);
@@ -9,4 +9,8 @@ public interface ICard {
 	
 	public void setBalance(double balance);
 	public double getBalance();
+	
+	
+	public void pay(double amount);
+	public void buy(double amount);
 }

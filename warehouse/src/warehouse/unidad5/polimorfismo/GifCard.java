@@ -1,24 +1,10 @@
-package warehouse.unidad5.abstracta;
-
-import java.lang.Object;
-
-import warehouse.unidad5.interfeces.ICard;
+package warehouse.unidad5.polimorfismo;
 
 public class GifCard extends BaseCard implements ICard{
 	
 	private String startDate;
 	private String endDate;
 	private String store;
-	
-	@Override
-	public void pay(double amount) {
-		throw new RuntimeException("No es posible aceptar pagos");
-	}
-	
-	@Override
-	public void buy(double amount) {
-		this.balance -= amount;
-	}
 	
 	public String getStartDate() {
 		return startDate;
@@ -38,10 +24,16 @@ public class GifCard extends BaseCard implements ICard{
 	public void setStore(String store) {
 		this.store = store;
 	}
-
+	
 	@Override
-	public void block() {
-		
+	public void pay(double amount) {
+		System.out.println("GifCard.pay");
+		this.balance += amount;
 	}
-
+	
+	@Override
+	public void buy(double amount) {
+		System.out.println("GifCard.buy");
+		this.balance -= amount;
+	}
 }
